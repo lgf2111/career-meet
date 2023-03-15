@@ -112,6 +112,18 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    pip install -r requirements.txt
    ```
+3. Generate a SECRET_KEY
+
+```py
+import os
+os.urandom(12)
+```
+
+4. Copy and add SECRET_KEY variable in .env
+
+```sh
+SECRET_KEY="<YOUR-SECRET-KEY>"
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
