@@ -1,0 +1,55 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<div class="container">
+    {% for category in categories %}
+    <div class="my-5">
+        <h1>{{ category }}</h1>
+        <div class="d-flex overflow-scroll">
+            {% for event in event_list %}
+            {% if event.category == category %}
+            <div class="card col-3 mx-2">
+                <img src="{{ event.image.url }}" class="card-img-top" alt="Image of event">
+                <div class="card-body d-flex flex-column align-items-start">
+                    <div class="">
+                        <span class="fw-semibold text-primary">{{ event.datetime }}</span><br>
+                        <h5 class="card-title">
+                            {{ event.title }}
+                        </h5>
+                        <p class="card-text">
+                            <img src="{{ event.organizer.profile.image.url }}" alt="" width="25"
+                                class="rounded-circle me-1">
+                            {{ event.organizer }}
+                            {% if event.organizer == user %}
+                            (You)
+                            {% endif %}
+                            <br>
+                            <small class=" text-muted">
+                                {% if event.location %}
+                                {{ event.location }}
+                                {% else %}
+                                Online Event
+                                {% endif %}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="mt-auto">
+                        <div class="mt-2">
+                            <a href="{% url 'event-detail' event.id %}" class="btn btn-outline-secondary">Details</a>
+                            {% if event.organizer != user %}
+                            {% if user in event.attendees.all %}
+                            <a href="{% url 'event-unattend' event.id %}" class="btn btn-outline-danger">Unattend</a>
+                            {% else %}
+                            <a href="{% url 'event-attend' event.id %}" class="btn btn-outline-primary">Attend</a>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

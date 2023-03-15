@@ -1,0 +1,42 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container my-5">
+    <div class="d-flex align-items-center">
+        <div class="col-md-6 me-4">
+            <h2>Our Mission</h2>
+            <p>At CareerMeet, we believe that every student and young professional should have access to resources and
+                opportunities that help them explore and pursue their career aspirations. Our mission is to provide a
+                platform for networking events that connect students and young professionals with industry experts,
+                potential employers, and mentorship opportunities.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'img/networking-event.jpg' %}" alt="Networking Event" width="100%">
+        </div>
+    </div>
+    <div class="d-flex align-items-center my-5">
+        <div class="col-md-6">
+            <img src="{% static 'img/career-advice.jpg' %}" alt="Career Advice" width="100%">
+        </div>
+        <div class="col-md-6 ms-4">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Networking events with industry experts</li>
+                <li>Job listings and internships</li>
+                <li>Mentorship opportunities</li>
+                <li>Resources for career exploration and development</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Get Involved</h2>
+            <p>Whether you're a student looking to explore different career paths, a recent graduate seeking job
+                opportunities, or a professional looking to give back by sharing your expertise and experiences, there
+                are many ways to get involved with CareerMeet. Sign up for our newsletter to stay up-to-date on our
+                upcoming events and opportunities, or visit our contact page to learn more about how you can contribute
+                to our community.</p>
+            <a class="btn btn-primary" href="mailto:lgf2111@gmail.com">Contact Us</a>
+        </div>
+    </div>
+</div> {% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'components/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="my-5">
+        <div class="d-flex overflow-scroll">
+            <div class="card col-3 mx-2">
+                <img src="{{ object.image.url }}" class="card-img-top" alt="Image of event">
+                <div class="card-body">
+                    <span class="fw-semibold text-secondary">{{ object.category }}</span><br>
+                    <span class="fw-semibold text-primary">{{ object.datetime }}</span><br>
+                    <h5 class="card-title">{{ object.title }}</h5>
+                    <p class="card-text">
+                        {{ object.organizer }}<br>
+                        <small class="text-muted">
+                            {% if event.location %}
+                            {{ object.location }}
+                            {% else %}
+                            Online Event
+                            {% endif %}
+                        </small>
+                    </p>
+                    {% if object.organizer == user %}
+                    <a href="{% url 'event-update' object.id %}" class="btn btn-outline-secondary">Edit</a>
+                    <a href="{% url 'event-delete' object.id %}" class="btn btn-outline-danger">Delete</a>
+                    {% else %}
+                    <a href="#" class="btn btn-outline-primary">Attend</a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="px-5">
+                <h3>Details</h3>
+                <p>{{ object.details }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
