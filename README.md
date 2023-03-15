@@ -34,7 +34,7 @@
 <h3 align="center">CareerMeet</h3>
 
   <p align="center">
-    Networking, with University Students
+    Meetup, with University Students
     <br />
     <a href="https://github.com/lgf2111/career-meet"><strong>Explore the docs »</strong></a>
     <br />
