@@ -129,17 +129,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [*] Main
-  - [*] About
-- [*] Event
-  - [*] Create
-  - [*] Read/Read All
-  - [*] Update
-  - [*] Delete
-- [*] User
-  - [*] Register
-  - [*] Login
-  - [*] Update Profile
+- [x] Main
+  - [x] About
+- [x] Event
+  - [x] Create
+  - [x] Read/Read All
+  - [x] Update
+  - [x] Delete
+- [x] User
+  - [x] Register
+  - [x] Login
+  - [x] Update Profile
 
 See the [open issues](https://github.com/lgf2111/career-meet/issues) for a full list of proposed features (and known issues).
 
